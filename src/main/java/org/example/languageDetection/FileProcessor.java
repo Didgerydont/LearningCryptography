@@ -1,4 +1,4 @@
-package org.example;
+package org.example.languageDetection;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class FileProcessor {
 
             while((line=bufferedReader.readLine()) != null){
                 words.add(line.toUpperCase());
-                System.out.println(line);
+                //System.out.println(line);
             }
 
             fileReader.close();

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.caesarCipher;
 
 public class CaesarCipherApp{
 	public static void main(String[] args){

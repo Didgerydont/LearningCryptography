@@ -1,4 +1,4 @@
-package org.example;
+package org.example.languageDetection;
 
 import java.util.Map;
 import java.util.HashMap;
