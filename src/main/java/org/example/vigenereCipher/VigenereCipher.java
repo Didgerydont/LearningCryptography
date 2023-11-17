@@ -4,7 +4,6 @@ package org.example.vigenereCipher;
 public class VigenereCipher {
 
     private static final String ALPHABET = " ,!.?ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    String key = "example secret key";
 
     public String encrypt(String plainText, String key){
         plainText = plainText.toUpperCase();
@@ -33,7 +32,25 @@ public class VigenereCipher {
         return cipherText.toString();
     }
 
-    public String decrypt(String encryptedText){
-        return "";
+    public String decrypt(String cipherText, String key){
+        cipherText = cipherText.toUpperCase();
+        key = key.toUpperCase();
+
+        StringBuilder plainText = new StringBuilder();
+        int keyIndex = 0;
+        for(int i=0; i<cipherText.length(); i++){
+            char c = cipherText.charAt(i);
+            int index = Math.floorMod(ALPHABET.indexOf(c)-ALPHABET.indexOf(key.charAt(keyIndex)), ALPHABET.length());
+            plainText.append(ALPHABET.charAt(index));
+
+            keyIndex++;
+
+            if(keyIndex == key.length()){
+                keyIndex = 0;
+            }
+
+        }
+
+        return plainText.toString();
     }
 }
